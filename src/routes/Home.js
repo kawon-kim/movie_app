@@ -1,53 +1,62 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
-import Movie from "../components/Movie";
-import "./Home.css";
+import List from '../components/List';
+import '../components/List.css';
+import './Home.css';
 
 class Home extends React.Component {
   state = {
     isLoading: true,
-    movies: []
+    out_data: [],
   };
-  getMovies = async () => {
+  getList = async () => {
     const {
-      data: {
-        data: { movies }
-      }
-    } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-    );
-    this.setState({ movies, isLoading: false });
+      data: { out_data },
+    } = await axios.get('/data/list.json');
+    this.setState({ out_data, isLoading: false });
   };
   componentDidMount() {
-    this.getMovies();
+    this.getList();
+
+    // fetch('http://localhost:3000/movie_app/data/list.json')
+    //   .then((resp) => resp.json())
+    //   .then((resp) => {
+    //     console.log('딩동');
+    //     this.setState({ out_data: resp.out_data });
+    //   });
   }
   render() {
-    const { isLoading, movies } = this.state;
+    const { isLoading, out_data } = this.state;
     return (
-      <section className="container">
-        {isLoading ? (
-          <div className="loader">
-            <span className="loader__text">Loading...</span>
+      <Fragment>
+        <section className="container" id="list_container">
+          <div className="contents">
+            {isLoading ? (
+              <div className="loader">
+                <span className="loader__text">Loading...</span>
+              </div>
+            ) : (
+              <ul className="process_list type2">
+                {out_data.map((slip) => (
+                  <List
+                    key={slip.SH_NO}
+                    id={slip.SH_NO}
+                    SH_NO={slip.SH_NO}
+                    SH_STATUS_CD={slip.SH_STATUS_CD}
+                    SH_STATUS_NM={slip.SH_STATUS_NM}
+                    MERC_NM={slip.MERC_NM}
+                    CURR_CD={slip.CURR_CD}
+                    TOTAL_AMT={slip.TOTAL_AMT}
+                    USE_DATE={slip.USE_DATE}
+                  />
+                ))}
+              </ul>
+            )}
           </div>
-        ) : (
-          <div className="movies">
-            {movies.map(movie => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                year={movie.year}
-                title={movie.title}
-                summary={movie.summary}
-                poster={movie.medium_cover_image}
-                genres={movie.genres}
-              />
-            ))}
-          </div>
-        )}
-      </section>
+        </section>
+      </Fragment>
     );
   }
 }
-
 
 export default Home;

@@ -1,0 +1,11 @@
+{
+  "menus": [
+    {
+      "MENU_CD": "SUAMOBILE0030",
+      "MENU_NM": "요청내역",
+      "ICON_TYPE": "menu02",
+      "MENU_LVL": "2"
+    }
+  ],
+  "user": { "EMP_NM": "장보고", "JOB_GRADE_NM": "선임" }
+}

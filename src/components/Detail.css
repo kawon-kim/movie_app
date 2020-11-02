@@ -1,0 +1,176 @@
+/* detail_list */
+.detail_list {
+  background: #fff;
+}
+.detail_list li {
+  padding: 18px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid #dae3ed;
+}
+.detail_list li:last-child {
+  border-bottom: none;
+}
+.detail_list li dl dt {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4px;
+  line-height: 20px;
+  font-size: 13px;
+  color: #424952;
+  font-weight: 400;
+}
+.detail_list li dl dd {
+  line-height: 21px;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: 0.05px;
+  font-weight: 400;
+}
+.detail_list li dl dd ul {
+  overflow: hidden;
+}
+.detail_list li dl dd ul li {
+  float: left;
+  margin-right: 10px;
+}
+.detail_list li dl dd span.txt_price {
+  font-family: 'SpoqaHan-Bold';
+}
+.detail_list li dl dd span.txt_gray {
+  font-size: 14px;
+  color: #a5b3c2;
+  font-family: 'SpoqaHan-Regular';
+}
+.detail_list li dl dd span.txt_red {
+  font-size: 14px;
+  color: #e0205c;
+  font-family: 'SpoqaHan-Regular';
+}
+.detail_list li dl dd span.txt_blue {
+  font-size: 14px;
+  color: #0590a6;
+  font-family: 'SpoqaHan-Regular';
+}
+.detail_list li dl dd textarea {
+  width: 100%;
+  height: 90px;
+  padding: 11px 12px;
+  border-radius: 3px;
+  border: 1px solid #bec9d4;
+  background: #fff;
+  resize: none;
+}
+
+.detail_list li.bor_none {
+  border-bottom: none;
+}
+
+.detail_list li dl dt.astar:after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: auto;
+  right: -6px;
+  top: 4px;
+  /* background: url('../images/icon_astar.svg') no-repeat center center; */
+}
+.detail_list li dl dd ol {
+  padding: 15px 22px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+.detail_list li dl dd ol li {
+  padding: 10px 0;
+  margin: 0;
+  float: none;
+  border-bottom: 1px solid #e9eff5;
+}
+.detail_list li dl dd ol li:last-child {
+  border-bottom: none;
+}
+.detail_list li dl dd ol li div {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05px;
+  color: #2c3238;
+}
+.detail_list li dl dd ol li div strong {
+  font-weight: 400;
+}
+.detail_list li dl dd ol li div span {
+  position: relative;
+  color: #2c3238;
+}
+.detail_list li dl dd ol li div strong span {
+  color: #8996a3;
+}
+.detail_list li dl dd ol li div strong span.on {
+  color: #e0205c;
+}
+.detail_list li dl dd ol li div i {
+  font-style: normal;
+  color: #a5b3c2;
+}
+.detail_list li dl dd ol li div p.info_txt {
+  margin-bottom: 6px;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #12a6be;
+  background: url('../images/icon_info_txt.svg') no-repeat left center;
+  font-weight: 400;
+}
+.detail_list li dl dd ol li div p.date {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+  color: #8996a3;
+  text-align: right;
+  font-family: 'SpoqaHan-Regular';
+}
+.detail_list li dl dd ol li div.select * {
+  font-weight: 500;
+}
+.detail_list li dl dd ol li ul li {
+  margin-bottom: 10px;
+}
+
+footer.content_footer {
+  position: static;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 72px;
+  background: #fff;
+  z-index: 5;
+  padding: 17px 20px calc(constant(safe-area-inset-bottom) + 15px);
+  padding: 17px 20px calc(env(safe-area-inset-bottom) + 15px);
+}
+footer button:last-child {
+  margin-left: 8px;
+}
+button.basic_btn {
+  flex: 1;
+  height: 36px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #424952;
+  border: 1px solid #bec9d4;
+  border-radius: 3px;
+  background: #fff;
+}
+button.basic_btn.type2 {
+  border: 1px solid #ed3a72;
+  color: #e0205c;
+}
